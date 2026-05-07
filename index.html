@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <meta name="description" content="A modern, beautifully designed Rock Paper Scissors game played against the computer.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Rock Paper Scissors</h1>
+            <p>Beat the system to win!</p>
+        </header>
+
+        <main>
+            <div class="score-board">
+                <div class="score-card user-score">
+                    <h2>You</h2>
+                    <span id="user-score">0</span>
+                </div>
+                <div class="score-card sys-score">
+                    <h2>System</h2>
+                    <span id="sys-score">0</span>
+                </div>
+            </div>
+
+            <div class="game-area">
+                <div class="choices">
+                    <button class="choice-btn" id="rock" title="Rock" aria-label="Rock">👊</button>
+                    <button class="choice-btn" id="paper" title="Paper" aria-label="Paper">🖐️</button>
+                    <button class="choice-btn" id="scissors" title="Scissors" aria-label="Scissors">✌️</button>
+                </div>
+
+                <div class="result-display">
+                    <h2 id="result-message">Make your move!</h2>
+                    <p id="choice-details">Choose an option above to start</p>
+                </div>
+                
+                <div class="actions">
+                    <button class="reset-btn" id="reset-btn">Reset Game</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
