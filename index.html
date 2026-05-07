@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
-    <meta name="description" content="A modern, beautifully designed Rock Paper Scissors game played against the computer.">
+    <title>Rock Paper Scissors Pro</title>
+    <meta name="description" content="A premium Rock Paper Scissors game with Best of 5 series.">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -12,39 +12,61 @@
     <div class="app-container">
         <header>
             <h1>Rock Paper Scissors</h1>
-            <p>Beat the system to win!</p>
+            <p class="match-info">Best of 5 Series - First to 3 wins!</p>
+            <div class="round-indicator">Round <span id="round-number">1</span></div>
         </header>
 
         <main>
             <div class="score-board">
-                <div class="score-card user-score">
+                <div class="score-card user-score" id="user-score-card">
                     <h2>You</h2>
                     <span id="user-score">0</span>
                 </div>
-                <div class="score-card sys-score">
+                <div class="score-card sys-score" id="sys-score-card">
                     <h2>System</h2>
                     <span id="sys-score">0</span>
                 </div>
             </div>
 
             <div class="game-area">
-                <div class="choices">
-                    <button class="choice-btn" id="rock" title="Rock" aria-label="Rock">👊</button>
-                    <button class="choice-btn" id="paper" title="Paper" aria-label="Paper">🖐️</button>
-                    <button class="choice-btn" id="scissors" title="Scissors" aria-label="Scissors">✌️</button>
+                <!-- Suspense / Battle Arena -->
+                <div class="battle-arena" id="battle-arena">
+                    <div class="hand-container player-hand">
+                        <div class="hand-icon" id="player-hand-icon">👊</div>
+                    </div>
+                    <div class="vs-text">VS</div>
+                    <div class="hand-container system-hand">
+                        <div class="hand-icon" id="system-hand-icon">👊</div>
+                    </div>
                 </div>
 
                 <div class="result-display">
                     <h2 id="result-message">Make your move!</h2>
-                    <p id="choice-details">Choose an option above to start</p>
+                    <p id="choice-details">Choose an option below</p>
+                </div>
+
+                <div class="choices" id="choices-container">
+                    <button class="choice-btn" id="rock" title="Rock" aria-label="Rock">👊</button>
+                    <button class="choice-btn" id="paper" title="Paper" aria-label="Paper">🖐️</button>
+                    <button class="choice-btn" id="scissors" title="Scissors" aria-label="Scissors">✌️</button>
                 </div>
                 
                 <div class="actions">
-                    <button class="reset-btn" id="reset-btn">Reset Game</button>
+                    <button class="reset-btn" id="reset-btn">Reset Match</button>
                 </div>
             </div>
         </main>
     </div>
+
+    <!-- Match Over Modal -->
+    <div class="modal-overlay" id="match-modal">
+        <div class="modal-content">
+            <h2 id="modal-title">Match Over!</h2>
+            <p id="modal-desc">You won the series 3 - 1</p>
+            <button class="play-again-btn" id="play-again-btn">Play Again</button>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 </body>
 </html>
